@@ -177,10 +177,8 @@
 
             const urlWhatsApp = `https://api.whatsapp.com/send?phone=${codigoBrasil}${ddd}${restante}&text=${encodeURIComponent(mensagem)}`;
 
-            // Confirmação antes de enviar a mensagem
-            if (confirm("Você tem certeza que deseja enviar esta mensagem?")) {
-                window.open(urlWhatsApp, '_blank');
-            }
+            // Abre o link do WhatsApp sem confirmação
+            window.open(urlWhatsApp, '_blank');
         }
 
         document.addEventListener('DOMContentLoaded', () => {
