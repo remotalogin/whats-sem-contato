@@ -4,6 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Enviar mensagem pelo WhatsApp sem Salvar contato</title>
+    <link rel="icon" href="wzap_icon.png" type="image/png">
+    <link rel="apple-touch-icon" href="wzap_icon.png">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap'); 
         body {
@@ -88,9 +90,11 @@
             0% {
                 box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
             }
+
             70% {
                 box-shadow: 0 0 0 10px rgba(37, 211, 102, 0);
             }
+
             100% {
                 box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
             }
@@ -99,19 +103,11 @@
         .button:focus {
             animation: pulse 1.5s infinite;
         }
-
-        .icon {
-            display: block;
-            margin: 0 auto 20px;
-            width: 64px; /* ajuste conforme necessário */
-            height: 64px; /* ajuste conforme necessário */
-        }
     </style>
 </head>
 <body>
     <div class="container">
         <h2>Enviar mensagem pelo WhatsApp Sem salvar Contato</h2>
-        <img src="caminho/para/wzap_icon.png" alt="Wzap" class="icon">
         <div class="form-group">
             <label for="ddd">Escolha o DDD:</label>
             <select id="ddd" name="ddd" class="select-field">
