@@ -6,6 +6,7 @@
     <title>Enviar mensagem pelo WhatsApp sem Salvar contato</title>
     <link rel="icon" href="wzap_icon.png" type="image/png">
     <link rel="apple-touch-icon" href="wzap_icon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap'); 
         body {
@@ -64,7 +65,9 @@
         }
 
         .button {
-            display: block;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             width: 100%;
             padding: 15px;
             font-size: 18px;
@@ -103,11 +106,15 @@
         .button:focus {
             animation: pulse 1.5s infinite;
         }
+
+        .icon {
+            margin-right: 8px;
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <h2>Enviar mensagem pelo WhatsApp Sem salvar Contato</h2>
+        <h2><i class="fab fa-whatsapp icon"></i>Enviar mensagem pelo WhatsApp Sem salvar Contato</h2>
         <div class="form-group">
             <label for="ddd">Escolha o DDD:</label>
             <select id="ddd" name="ddd" class="select-field">
@@ -147,7 +154,9 @@
             <label for="mensagem">Mensagem:</label>
             <textarea id="mensagem" name="mensagem" class="textarea-field" rows="4" placeholder="Digite sua mensagem aqui..." required></textarea>
         </div>
-        <button class="button" onclick="enviarMensagemWhatsApp()">Enviar mensagem pelo WhatsApp</button>
+        <button class="button" onclick="enviarMensagemWhatsApp()">
+            <i class="fab fa-whatsapp icon"></i>Enviar mensagem pelo WhatsApp
+        </button>
     </div>
     <script>
         function enviarMensagemWhatsApp() {
