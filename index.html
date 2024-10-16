@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8" w-tid="3"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" w-tid="4"/>
-    <title w-tid="5">Enviar mensagem pelo WhatsApp sem Salvar contato</title>
-    <style w-tid="6">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Enviar mensagem pelo WhatsApp sem Salvar contato</title>
+    <style>
         @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap'); 
         body {
             font-family: 'Roboto', sans-serif;
@@ -88,11 +88,9 @@
             0% {
                 box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
             }
-
             70% {
                 box-shadow: 0 0 0 10px rgba(37, 211, 102, 0);
             }
-
             100% {
                 box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
             }
@@ -101,53 +99,61 @@
         .button:focus {
             animation: pulse 1.5s infinite;
         }
+
+        .icon {
+            display: block;
+            margin: 0 auto 20px;
+            width: 64px; /* ajuste conforme necessário */
+            height: 64px; /* ajuste conforme necessário */
+        }
     </style>
 </head>
-<body w-tid="7">
-    <div class="container" w-tid="8">
-        <h2 w-tid="9">Enviar mensagem pelo WhatsApp Sem salvar Contato </h2>
-        <div class="form-group" w-tid="10">
-            <label for="ddd" w-tid="11">Escolha o DDD:</label>
-            <select id="ddd" name="ddd" class="select-field" w-tid="12">
-                <option value="51" selected w-tid="13">51 - Porto Alegre (RS)</option>
-                <option value="11" w-tid="14">11 - São Paulo (SP)</option>
-                <option value="21" w-tid="15">21 - Rio de Janeiro (RJ)</option>
-                <option value="31" w-tid="16">31 - Belo Horizonte (MG)</option>
-                <option value="41" w-tid="17">41 - Curitiba (PR)</option>
-                <option value="61" w-tid="18">61 - Brasília (DF)</option>
-                <option value="71" w-tid="19">71 - Salvador (BA)</option>
-                <option value="81" w-tid="20">81 - Recife (PE)</option>
-                <option value="85" w-tid="21">85 - Fortaleza (CE)</option>
-                <option value="91" w-tid="22">91 - Belém (PA)</option>
-                <option value="68" w-tid="23">68 - Acre (AC)</option>
-                <option value="82" w-tid="24">82 - Alagoas (AL)</option>
-                <option value="96" w-tid="25">96 - Amapá (AP)</option>
-                <option value="92" w-tid="26">92 - Amazonas (AM)</option>
-                <option value="27" w-tid="27">27 - Espírito Santo (ES)</option>
-                <option value="62" w-tid="28">62 - Goiás (GO)</option>
-                <option value="98" w-tid="29">98 - Maranhão (MA)</option>
-                <option value="65" w-tid="30">65 - Mato Grosso (MT)</option>
-                <option value="67" w-tid="31">67 - Mato Grosso do Sul (MS)</option>
-                <option value="83" w-tid="32">83 - Paraíba (PB)</option>
-                <option value="84" w-tid="33">84 - Rio Grande do Norte (RN)</option>
-                <option value="69" w-tid="34">69 - Rondônia (RO)</option>
-                <option value="95" w-tid="35">95 - Roraima (RR)</option>
-                <option value="48" w-tid="36">48 - Santa Catarina (SC)</option>
-                <option value="79" w-tid="37">79 - Sergipe (SE)</option>
-                <option value="63" w-tid="38">63 - Tocantins (TO)</option>
+<body>
+    <div class="container">
+        <h2>Enviar mensagem pelo WhatsApp Sem salvar Contato</h2>
+        <img src="caminho/para/wzap_icon.png" alt="Wzap" class="icon">
+        <div class="form-group">
+            <label for="ddd">Escolha o DDD:</label>
+            <select id="ddd" name="ddd" class="select-field">
+                <option value="51" selected>51 - Porto Alegre (RS)</option>
+                <option value="11">11 - São Paulo (SP)</option>
+                <option value="21">21 - Rio de Janeiro (RJ)</option>
+                <option value="31">31 - Belo Horizonte (MG)</option>
+                <option value="41">41 - Curitiba (PR)</option>
+                <option value="61">61 - Brasília (DF)</option>
+                <option value="71">71 - Salvador (BA)</option>
+                <option value="81">81 - Recife (PE)</option>
+                <option value="85">85 - Fortaleza (CE)</option>
+                <option value="91">91 - Belém (PA)</option>
+                <option value="68">68 - Acre (AC)</option>
+                <option value="82">82 - Alagoas (AL)</option>
+                <option value="96">96 - Amapá (AP)</option>
+                <option value="92">92 - Amazonas (AM)</option>
+                <option value="27">27 - Espírito Santo (ES)</option>
+                <option value="62">62 - Goiás (GO)</option>
+                <option value="98">98 - Maranhão (MA)</option>
+                <option value="65">65 - Mato Grosso (MT)</option>
+                <option value="67">67 - Mato Grosso do Sul (MS)</option>
+                <option value="83">83 - Paraíba (PB)</option>
+                <option value="84">84 - Rio Grande do Norte (RN)</option>
+                <option value="69">69 - Rondônia (RO)</option>
+                <option value="95">95 - Roraima (RR)</option>
+                <option value="48">48 - Santa Catarina (SC)</option>
+                <option value="79">79 - Sergipe (SE)</option>
+                <option value="63">63 - Tocantins (TO)</option>
             </select>
         </div>
-        <div class="form-group" w-tid="39">
-            <label for="restante" w-tid="40">Restante do número de telefone:</label>
-            <input type="tel" id="restante" name="restante" class="input-field" placeholder="Ex: 912345678" pattern="[0-9]{8,9}" required w-tid="41"/>
+        <div class="form-group">
+            <label for="restante">Restante do número de telefone:</label>
+            <input type="tel" id="restante" name="restante" class="input-field" placeholder="Ex: 912345678" pattern="[0-9]{8,9}" required />
         </div>
-        <div class="form-group" w-tid="42">
-            <label for="mensagem" w-tid="43">Mensagem:</label>
-            <textarea id="mensagem" name="mensagem" class="textarea-field" rows="4" placeholder="Digite sua mensagem aqui..." required w-tid="44"></textarea>
+        <div class="form-group">
+            <label for="mensagem">Mensagem:</label>
+            <textarea id="mensagem" name="mensagem" class="textarea-field" rows="4" placeholder="Digite sua mensagem aqui..." required></textarea>
         </div>
-        <button class="button" onclick="enviarMensagemWhatsApp()" w-tid="45">Enviar mensagem pelo WhatsApp</button>
+        <button class="button" onclick="enviarMensagemWhatsApp()">Enviar mensagem pelo WhatsApp</button>
     </div>
-    <script w-tid="46">
+    <script>
         function enviarMensagemWhatsApp() {
             const ddd = document.getElementById("ddd").value.trim();
             const codigoBrasil = "+55";
@@ -166,7 +172,10 @@
 
             const urlWhatsApp = `https://api.whatsapp.com/send?phone=${codigoBrasil}${ddd}${restante}&text=${encodeURIComponent(mensagem)}`;
 
-            window.open(urlWhatsApp, '_blank');
+            // Confirmação antes de enviar a mensagem
+            if (confirm("Você tem certeza que deseja enviar esta mensagem?")) {
+                window.open(urlWhatsApp, '_blank');
+            }
         }
 
         document.addEventListener('DOMContentLoaded', () => {
