@@ -1,0 +1,172 @@
+<!DOCTYPE 
+        <meta charset="UTF-8" w-tid="3"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" w-tid="4"/>
+        <title w-tid="5">Enviar mensagem pelo WhatsApp sem Salvar contato</title>
+        <style w-tid="6">
+            @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap'); body {
+                font-family: 'Roboto', sans-serif;
+                background-color: #111;
+                color: #fff;
+                margin: 0;
+                padding: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                min-height: 100vh;
+            }
+
+            .container {
+                max-width: 500px;
+                width: 90%;
+                background-color: #222;
+                padding: 30px;
+                border-radius: 15px;
+                box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+            }
+
+            h2 {
+                text-align: center;
+                color: #25D366;
+                margin-bottom: 30px;
+                font-weight: 700;
+            }
+
+            .form-group {
+                margin-bottom: 25px;
+            }
+
+            .form-group label {
+                display: block;
+                margin-bottom: 8px;
+                font-weight: 300;
+                color: #ccc;
+            }
+
+            .input-field, .textarea-field, .select-field {
+                width: 100%;
+                padding: 12px;
+                font-size: 16px;
+                border: none;
+                border-radius: 8px;
+                background-color: #333;
+                color: #fff;
+                transition: all 0.3s ease;
+            }
+
+            .input-field:focus, .textarea-field:focus, .select-field:focus {
+                outline: none;
+                box-shadow: 0 0 0 2px #25D366;
+            }
+
+            .button {
+                display: block;
+                width: 100%;
+                padding: 15px;
+                font-size: 18px;
+                font-weight: 700;
+                background-color: #25D366;
+                color: #fff;
+                border: none;
+                border-radius: 8px;
+                cursor: pointer;
+                transition: background-color 0.3s, transform 0.2s;
+            }
+
+            .button:hover {
+                background-color: #128C7E;
+                transform: translateY(-2px);
+            }
+
+            .button:active {
+                transform: translateY(1px);
+            }
+
+            @keyframes pulse {
+                0% {
+                    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+                }
+
+                70% {
+                    box-shadow: 0 0 0 10px rgba(37, 211, 102, 0);
+                }
+
+                100% {
+                    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+                }
+            }
+
+            .button:focus {
+                animation: pulse 1.5s infinite;
+            }
+        </style>
+    </head>
+    <body w-tid="7">
+        <div class="container" w-tid="8">
+            <h2 w-tid="9">Enviar mensagem pelo WhatsApp Sem salvar Contato </h2>
+            <div class="form-group" w-tid="10">
+                <label for="ddd" w-tid="11">Escolha o DDD:</label>
+                <select id="ddd" name="ddd" class="select-field" w-tid="12">
+                    <option value="51" selected w-tid="13">51 - Porto Alegre (RS)</option>
+                    <option value="11" w-tid="14">11 - São Paulo (SP)</option>
+                    <option value="21" w-tid="15">21 - Rio de Janeiro (RJ)</option>
+                    <option value="31" w-tid="16">31 - Belo Horizonte (MG)</option>
+                    <option value="41" w-tid="17">41 - Curitiba (PR)</option>
+                    <option value="61" w-tid="18">61 - Brasília (DF)</option>
+                    <option value="71" w-tid="19">71 - Salvador (BA)</option>
+                    <option value="81" w-tid="20">81 - Recife (PE)</option>
+                    <option value="85" w-tid="21">85 - Fortaleza (CE)</option>
+                    <option value="91" w-tid="22">91 - Belém (PA)</option>
+                </select>
+            </div>
+            <div class="form-group" w-tid="23">
+                <label for="restante" w-tid="24">Restante do número de telefone:</label>
+                <input type="tel" id="restante" name="restante" class="input-field" placeholder="Ex: 912345678" pattern="[0-9]{8,9}" required w-tid="25"/>
+            </div>
+            <div class="form-group" w-tid="26">
+                <label for="mensagem" w-tid="27">Mensagem:</label>
+                <textarea id="mensagem" name="mensagem" class="textarea-field" rows="4" placeholder="Digite sua mensagem aqui..." required w-tid="28"></textarea>
+            </div>
+            <button class="button" onclick="enviarMensagemWhatsApp()" w-tid="29">Enviar mensagem pelo WhatsApp</button>
+        </div>
+        <script w-tid="30">
+            function enviarMensagemWhatsApp() {
+                const ddd = document.getElementById("ddd").value.trim();
+                const codigoBrasil = "+55";
+                const restante = document.getElementById("restante").value.trim();
+                const mensagem = document.getElementById("mensagem").value.trim();
+
+                if (restante === "" || mensagem === "") {
+                    alert("Por favor, preencha todos os campos.");
+                    return;
+                }
+
+                if (!/^[0-9]{8,9}$/.test(restante)) {
+                    alert("Por favor, insira um número de telefone válido (8 ou 9 dígitos).");
+                    return;
+                }
+
+                const urlWhatsApp = `https://api.whatsapp.com/send?phone=${codigoBrasil}${ddd}${restante}&text=${encodeURIComponent(mensagem)}`;
+
+                window.open(urlWhatsApp, '_blank');
+            }
+
+            document.addEventListener('DOMContentLoaded', () => {
+                const inputs = document.querySelectorAll('.input-field, .textarea-field, .select-field');
+                inputs.forEach(input => {
+                    input.addEventListener('focus', () => {
+                        input.parentElement.classList.add('active');
+                    }
+                    );
+                    input.addEventListener('blur', () => {
+                        if (input.value === '') {
+                            input.parentElement.classList.remove('active');
+                        }
+                    }
+                    );
+                }
+                );
+            }
+            );
+        </script>
+    </body>
+</html>
